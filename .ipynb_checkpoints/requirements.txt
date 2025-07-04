@@ -1,6 +1,5 @@
 streamlit
 pandas
-scikit-learn
 numpy
-streamlit-lottie
-
+scikit-learn
+streamlit-lottie==0.0.3
