@@ -2,7 +2,6 @@ import streamlit as st
 import pickle
 import numpy as np
 import time
-from streamlit_lottie import st_lottie
 import requests
 
 # Load animation from Lottie
@@ -21,9 +20,6 @@ with open("scaler.pkl", "rb") as f:
 
 # Page setup
 st.set_page_config(page_title="Mental Health Predictor", page_icon="🧠", layout="centered")
-
-# Load animation
-# lottie_mental = load_lottieurl("https://assets4.lottiefiles.com/packages/lf20_touohxv0.json")
 
 # Custom CSS
 st.markdown("""
@@ -68,9 +64,21 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Title & animation
+# Title & Animation
 st.markdown("<h1 style='text-align: center;'>🧠 Mental Health Prediction</h1>", unsafe_allow_html=True)
-# st_lottie(lottie_mental, height=250, key="mental_anim")
+
+# ✅ Replacing st_lottie with HTML-based Lottie animation
+st.components.v1.html("""
+    <div style='display: flex; justify-content: center;'>
+        <lottie-player src="https://lottie.host/5299d1bb-6a17-4cc1-bd16-fd9897641f63/fWeCHLNeCy.json"
+                       background="transparent"
+                       speed="1"
+                       style="width: 300px; height: 300px;"
+                       loop autoplay></lottie-player>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+""", height=300)
+
 st.markdown("---")
 
 # Input form
@@ -121,5 +129,3 @@ st.markdown("""
     <b>Bhavani</b> 🧠
     </footer>
 """, unsafe_allow_html=True)
-
-
